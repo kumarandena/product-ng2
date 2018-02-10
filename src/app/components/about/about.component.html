@@ -1,0 +1,32 @@
+<h1>About</h1>
+<button (click)="show = !show">
+    {{ show? "Hide" : "Show"}}
+  </button>
+<!-- <input [ngModel]="name" 
+(ngModelChange)= "name = $event"
+/> -->
+<input [(ngModel)]="name" 
+/>
+<p>
+  name is {{name}}
+</p>
+<div *ngIf="show else listnotshown">
+  <ul appHighlight color='lightgreen'> 
+    <li *ngFor="let name of members">
+      {{name}}
+    </li>
+  </ul>
+</div>
+<ng-template #listnotshown>
+  <div>
+    <p>List is not shown</p>
+  </div>
+</ng-template>
+
+<button (click)="addMember()">
+  Add
+</button>
+<button (click)="empty()">
+  Empty
+</button>
+

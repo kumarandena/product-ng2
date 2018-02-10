@@ -1,0 +1,28 @@
+<!-- data binding to component public member variable -->
+
+<h2 appHighlight color='lightblue'>Welcome to {{appTitle}}</h2>
+
+<!-- app component is parent, app-header is child comp -->
+<app-header>
+</app-header>
+
+<!-- view place holder for router -->
+<router-outlet>
+    
+</router-outlet>
+
+<!-- <app-home >
+</app-home>
+
+<app-about>
+</app-about>
+
+<app-contact>
+</app-contact> -->
+
+<!-- parent child data passing -->
+<app-footer [year]="2018 + 2" 
+            [company]="appTitle"
+            (emailEvent)="onEmail($event)"
+>
+</app-footer>
